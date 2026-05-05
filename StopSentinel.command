@@ -10,3 +10,6 @@ echo "✅ LogSentinel shut down successfully."
 
 # Wait 2 seconds before finishing so you can see the message
 sleep 2
+
+# Closes the terminal window
+killall Terminal

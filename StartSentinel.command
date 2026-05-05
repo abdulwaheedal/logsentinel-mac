@@ -1,23 +1,30 @@
 #!/bin/bash
 
-# Activate the venv that's in ~/Downloads (where you ran pip install)
-source ~/Downloads/venv/bin/activate
+# Get the directory where this script is located
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd "$DIR"
 
-# Move into the project folder
-cd ~/Downloads/logsentinel-mac
+# 1. Activate the venv (assuming it's inside the project folder)
+if [ -d "venv" ]; then
+    source venv/bin/activate
+else
+    echo "❌ Error: Virtual environment (venv) not found."
+    echo "Please run 'python3 -m venv venv && pip install -r requirements.txt' first."
+    exit 1
+fi
 
-# Start the backend API in the background
+# 2. Start the backend API in the background
 uvicorn api.main:app --host 0.0.0.0 --port 8000 &
 
-# Wait for API to boot
+# 3. Wait for API to boot
 sleep 2
 
-# Start the log agent in the background
+# 4. Start the log agent in the background
 python agent/mac_log_agent.py &
 
-# Open the dashboard
+# 5. Open the dashboard
 open dashboard/index.html
 
-echo "✅ LogSentinel started. Check terminal for logs."
+echo "✅ LogSentinel started."
 echo "   API:       http://localhost:8000/health"
 echo "   Dashboard: dashboard/index.html"
