@@ -6,7 +6,7 @@
 [**Website**](https://sentinelog.netlify.app)  <img width="1439" height="899" alt="Screenshot 2026-05-06 at 1 16 24 AM" src="https://github.com/user-attachments/assets/6a5d7ac6-5df9-41eb-8e0c-15ea81bec6ba" />
 
 [**Download**](https://github.com/user-attachments/files/27407529/logsentinel-mac-v1.1.1.zip)  
-[**Installation Guide**](https://github.com/abdulwaheedal/logsentinel-mac/edit/main/README.md#installation--usage)
+[**Installation Guide**](#installation--usage)
 [**Training Notebook**](https://colab.research.google.com/github/abdulwaheedal/AI_Anamoly_Detection_using_logs/blob/main/Anomaly_Detection_System_HDFS.ipynb)
 
 ---
